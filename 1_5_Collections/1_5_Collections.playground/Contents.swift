@@ -1,52 +1,45 @@
 import Foundation
 
-// создаем массив, заполняем рандомными int-ами
+// Есть произвольный массив чисел
 var array: [Int] = []
 for _ in 0..<20 {
-    array.append(Int.random(in: 0...19))
+    array.append(Int.random(in: -20...100))
 }
-print(array)
+//print(array)
 
-// version A: O(N^2)
 
-func indexOfFirstDuplicate(in array: [Int]) -> Int {
-
+// найти максимальное и минимальное число и поменять их местами
+func swapMinWithMax(in array: [Int]) -> [Int] {
+    var minInd: Int = 0
+    var minValue: Int = Int.max
+    var maxInd: Int = 0
+    var maxValue: Int = Int.min
+    var newArray = array
+//ищу индекс и запоминаю число для дальнейшего сравнения
     for i in 0 ..< array.count {
-        // сравниваем каждое i-тое значение только с оставшимися в массиве значениями
-        for j in i + 1 ..< array.count {
-            // если совпадение со значением по какому-либо из следующих индексов есть, возвращаем его
-            if array[i] == array[j] {
-                return i
-            }
+        if array[i] < minValue {
+            minInd = i
+            minValue = array[i]
+        }
+        if array[i] > maxValue {
+            maxInd = i
+            maxValue = array[i]
         }
     }
-    //если совпадений не было, возвращаем -1
-    return -1
+    //просто меняю местами в новом массиве (старый константа)
+    newArray[minInd] = array[maxInd]
+    newArray[maxInd] = array[minInd]
+    return newArray
 }
 
-//let result = indexOfFirstDuplicate(in: array)
-//print(result)
 
-// version B: O(N)
-
-func indexOfFirstDuplicateLinear(in array: [Int]) -> Int {
-    // в этом словаре по ключу будут храниться значения, а в значении будут индексы массива
-    var dict: [Int: Int] = [:]
-    
-    //эта переменная для хранения минимального индекса
-    var minInd = Int.max
-    //за одну проходку по массиву
-    for i in 0 ..< array.count {
-        //получаем ключ(индекс) в переменную и если этот индекс самый левый, его сохраняем как минимум (это нужно, чтобы кейс [2, 4, 5, 5, 2] отработал корректно
-        if let prevInd = dict[array[i]] {
-            if minInd > prevInd {
-                minInd = prevInd
-            }
-        }
-        dict[array[i]] = i
-    }
-    return minInd == Int.max ? -1 : minInd
-}
- 
-//let res2 = indexOfFirstDuplicateLinear(in: array)
-//print(res2)
+//for i in 0 ..< array.count {
+//    print(array[i], terminator: ", ")
+//}
+//
+//print("\n")
+//var newArr = swapMinWithMax(in: array)
+//
+//for i in 0 ..< newArr.count {
+//    print(newArr[i], terminator: ", ")
+//}
