@@ -52,12 +52,40 @@ func swapMinWithMax(in array: [Int]) -> [Int] {
 let arrayOne: [Character] = ["h", "e", "l", "l", "o", "u", "y", "m"]
 let arrayTwo: [Character] = ["s", "u", "m", "m", "e", "r", "l", "l", "k"]
 
+//нужно вернуть пересечение в виде множества
 func intersection(of arrayOne: [Character], with arrayTwo: [Character]) -> Set<Character> {
     
     return Set(arrayOne).intersection(Set(arrayTwo))
 }
+//
+//let mySet = intersection(of: arrayOne, with: arrayTwo)
+//for i in 0 ..< Array(mySet).count {
+//    print(Array(mySet)[i], terminator: " ")
+//}
 
-let mySet = intersection(of: arrayOne, with: arrayTwo)
-for i in 0 ..< Array(mySet).count {
-    print(Array(mySet)[i], terminator: " ")
+// MARK: ex03 - Selection from the Dictionary
+// Создать словарь с соотношением имя (ключ) пользователя - пароль (значение), получить из словаря все имена, пароли которых длиннее 10 символов
+var dict = ["ann": "password",
+            "lizzy": "Access7forbidden",
+            "john404": "File not found",
+            "cole500": "Internal server error"]
+
+func findUsernameWithLongerPassword(from dict: [String: String]) -> [String] {
+    var result: [String] = []
+    
+    for v in dict.values {
+        if v.count >= 10 {
+            result.append(v)
+        }
+    }
+    
+    return result
 }
+
+//var arr = findUsernameWithLongerPassword(from: dict)
+//
+//dict.forEach { print($0) }
+//print()
+//
+//arr.forEach { print($0) }
+//print()
