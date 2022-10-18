@@ -42,11 +42,32 @@ exampleWithClosure(with: {print("The number passed id >= 10 and equals to: \(num
 // функция принимает число на вход (год), проверить високосный ли он
 
 func isYearLeap(with year: Int) -> Bool {
-    return year % 4 == 0
+    //
+    if year % 4 != 0 {
+        // Если год не делится на 4, значит он обычный.
+        return false
+    } else {
+        // Иначе надо проверить не делится ли год на 100.
+        if year % 100 != 0 {
+            // Если не делится, значит это не столетие и можно сделать вывод, что год високосный.
+            return true
+        } else {
+            // Если делится на 100, значит это столетие и его следует проверить его делимость на 400.
+            if year % 400 == 0 {
+                //Если год делится на 400, то он високосный.
+                return true
+            }
+            return false
+        }
+    }
 }
 
 print("\n4) функция принимает число на вход (год), проверить високосный ли он")
 let leapYear = 1984
 let year = 1989
+let leapCentury = 4000
+
 print("Is the \(leapYear) a leap year? - \(isYearLeap(with: leapYear))")
 print("Is the \(year) a leap year? - \(isYearLeap(with: year))")
+
+print("Is the \(leapCentury) a leap year? - \(isYearLeap(with: leapCentury))")
