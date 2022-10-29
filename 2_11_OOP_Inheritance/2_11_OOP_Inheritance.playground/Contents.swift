@@ -79,7 +79,55 @@ final class RawProduct: Product {
 }
 
 
-
+class Clothes: Product {
+    enum ClothesType {
+        case dress
+        case pant
+        case shirt
+        case longsleeve
+    }
+    
+    enum Size: Int {
+        case xSmall=1, small, medium, large, xLarge
+        
+        func getCurrentSize() -> String {
+            return Size.getSize(index: rawValue)
+        }
+        
+        static func getSize(index: Int) -> String {
+            switch index {
+            case 1:
+                return "XS"
+            case 2:
+                return "S"
+            case 3:
+                return "M"
+            case 4:
+                return "L"
+            case 5:
+                return "XL"
+            default:
+                return "free size"
+            }
+        }
+    }
+    
+    var clothesType: ClothesType
+    var size: Size
+    
+    init(
+        with clothesType: ClothesType,
+        of size: Size
+    ) {
+        self.clothesType = clothesType
+        self.size = size
+        super.init(kind: .thing, name: "🥻")
+    }
+    
+    func getFullInfo(of thing: Clothes) {
+        print("Full info of \(thing.name):\n▪️ Type: \(thing.clothesType)\n▪️ Size \(thing.size)\n▪️ Is it edible: \(thing.isEdible())")
+    }
+}
 
 let banana = Product(kind: .food, name: "Banana")
 if banana.kind == Product.Kind.food {
@@ -91,3 +139,7 @@ print("This is a 📦 \(box.name) and it is a \(box.kind). By the way, is it edi
 
 let berry = RawProduct(with: "Strawberry", and: .berry)
 berry.printName(with: berry.name)
+
+
+let jeans = Clothes(with: .pant, of: .medium)
+jeans.getFullInfo(of: jeans)
