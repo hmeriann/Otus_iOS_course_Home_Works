@@ -49,7 +49,7 @@ extension Stack: IStack {
 /// for printing the stack w/o cicle
 extension Stack: CustomStringConvertible {
     var description: String {
-        return "Peak item: \(String(describing: self.peek)); count: \(self.count); elements: \(self.storage)"
+        return "Peek item: \(String(describing: self.peek)); count: \(self.count); elements: \(self.storage)"
     }
 }
 
@@ -84,3 +84,44 @@ public protocol IQueue {
     /// Remove the element at the front of the queue and return it.
     mutating func dequeue() -> Element?
 }
+
+public struct QueueArray<Element>: IQueue {
+    private var array: [Element] = []
+    public init(
+        array: [Element] = []
+    ) {
+        self.array = array
+    }
+
+    public var isEmpty: Bool {
+        array.isEmpty
+    }
+    
+    public var peek: Element? {
+        array.first
+    }
+    
+    public mutating func enqueue(_ element: Element) -> Bool {
+        array.append(element)
+        return true
+    }
+    
+    public mutating func dequeue() -> Element? {
+        isEmpty ? nil : array.removeFirst()
+    }
+}
+
+extension QueueArray: CustomStringConvertible {
+    public var description: String {
+        return "Peek item: \(String(describing: self.peek)); elements: \(self.array)"
+    }
+}
+
+var queue = QueueArray<String>()
+queue.enqueue("Ray")
+queue.enqueue("Tray")
+queue.enqueue("Zuleykha")
+
+print(queue)
+queue.dequeue()
+print(queue)
