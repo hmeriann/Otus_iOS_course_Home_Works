@@ -40,8 +40,8 @@ class Product {
         return name.count
     }
     
-    func printName(with name: String) {
-        print("The name is \(name).")
+    func printName() {
+        print("The name is \(self.name).")
     }
 }
 
@@ -73,7 +73,7 @@ final class RawProduct: Product {
         self.init(with: fruit, and: .fruit)
     }
     
-    override func printName(with name: String) {
+    override func printName() {
         print("⚠️ This is the overrided function from the class called RawProduct⚠️\nThe products name is \(name) and it is a \(self.rawProductType).")
     }
 }
@@ -129,20 +129,28 @@ class Clothes: Product {
     }
 }
 
-print("\n🌀 Check Parent class object creation")
-let banana = Product(kind: .food, name: "Banana")
-if banana.kind == Product.Kind.food {
-    print("\(banana.name) is a 🍌 food. And its name contains \(banana.nameLength(of: banana.name)) characters.")
+//print("\n🌀 Check Parent class object creation")
+//let banana = Product(kind: .food, name: "Banana")
+//if banana.kind == Product.Kind.food {
+//    print("\(banana.name) is a 🍌 food. And its name contains \(banana.nameLength(of: banana.name)) characters.")
+//}
+//
+//print("\n🌀 Check Parent class object creation only with name")
+//let box = Product(name: "Box")
+//print("This is a 📦 \(box.name) and it is a \(box.kind). By the way, is it edible? - \(box.isEdible())")
+//
+//print("\n🌀 Check Child class RawProduct object creation")
+//let berry = RawProduct(with: "Strawberry", and: .berry)
+//berry.printName(with: berry.name)
+//
+//print("\n🌀 Check Child class Clothes object creation")
+//let jeans = Clothes(with: .pant, of: .medium)
+//jeans.getFullInfo(of: jeans)
+
+
+func demonstratePolymorphism() {
+    let products: [Product] = [Product(name: "donut"), RawProduct(with: "Mushroom", and: .mushroom), Clothes(with: .dress, of: .small)]
+    products.forEach { $0.printName() }
 }
 
-print("\n🌀 Check Parent class object creation only with name")
-let box = Product(name: "Box")
-print("This is a 📦 \(box.name) and it is a \(box.kind). By the way, is it edible? - \(box.isEdible())")
-
-print("\n🌀 Check Child class RawProduct object creation")
-let berry = RawProduct(with: "Strawberry", and: .berry)
-berry.printName(with: berry.name)
-
-print("\n🌀 Check Child class Clothes object creation")
-let jeans = Clothes(with: .pant, of: .medium)
-jeans.getFullInfo(of: jeans)
+demonstratePolymorphism()
