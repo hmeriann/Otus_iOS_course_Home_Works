@@ -7,7 +7,7 @@ protocol IStack {
     associatedtype T
     
     var isEmpty: Bool { get }
-    var peak: T? { get }
+    var peek: T? { get }
     var count: Int { get }
     
     mutating func pop() -> T?
@@ -29,7 +29,7 @@ extension Stack: IStack {
         return storage.isEmpty
     }
     
-    var peak: T? {
+    var peek: T? {
         return storage.last
     }
     
@@ -49,7 +49,7 @@ extension Stack: IStack {
 /// for printing the stack w/o cicle
 extension Stack: CustomStringConvertible {
     var description: String {
-        return "Peak item: \(String(describing: self.peak)); count: \(self.count); elements: \(self.storage)"
+        return "Peak item: \(String(describing: self.peek)); count: \(self.count); elements: \(self.storage)"
     }
 }
 
@@ -67,3 +67,20 @@ print(stack)
 //stack.push(element: 1)
 //stack.push(element: 2)
 //stack.push(element: 7)
+
+
+// MARK: - QUEUE Implementation
+/// Queue is an Abstract data type with FIFO principle (ex. like a queue)
+/// the protocol describes the core operations for queue
+public protocol IQueue {
+    associatedtype Element
+    /// Check if the queue is empty.
+    var isEmpty: Bool { get }
+    /// Return the element at the front of the queue without removing it
+    var peek: Element? { get }
+
+    /// Insert an element at the back of the queue. Returns true if the operation was successful.
+    mutating func enqueue(_ element: Element) -> Bool
+    /// Remove the element at the front of the queue and return it.
+    mutating func dequeue() -> Element?
+}
