@@ -13,26 +13,76 @@ class FunLottery {
 }
 
 let funLottery = FunLottery()
-print(luckyNumberForName(name: "Mr. Roboto", funLottery.lotteryHandler))
+print("▪️Функция, принимающая функцию как параметр")
+print(luckyNumberForName(name: "Hey there", funLottery.lotteryHandler))
 
 // MARK: - Функция с несколькими замыканиями
 
-let printAction = { (action: String) in
-    print("Look how I can \(action)")
+let running = {
+    print("I can run")
 }
 
-let printSum = { (x: Int, y: Int) in
-    print("The sum of X and Y is \(String(x+y))")
+let swimming = {
+    print("I can swim")
 }
 
-func abilities(printAction: () -> Void, printSum: () -> Void) {
-    printAction((action: "run") -> Void)
-    printSum(4, 8)
+let flying = {
+    print("I can fly")
 }
 
+func abilities(first: () -> Void, second: () -> Void) {
+    running()
+    swimming()
+}
 
-
+print("\n▪️ Функция с несколькими замыканиями")
+abilities(first: running, second: swimming)
+abilities(first: running, second: flying)
 
 // MARK: - Функция с autoclosure
-// MARK: - Использование внутренних функций
+/// @autoclosure attribute can be applied to a closure parameter for a function, and automatically creates a closure from an expression you pass in
+let persons = ["Batman", "Bob", "Betty"]
+
+func superpower(power: @autoclosure () -> Void) {
+    for person in persons {
+        if person.count % 2 == 0 {
+            print("🦹🏽 I'm \(person) and ")
+            flying()
+        } else {
+            print("🤖 I'm \(person) and")
+            running()
+        }
+    }
+}
+
+print("\n▪️Функция с autoclosure")
+superpower(power: ())
+
+// MARK: - Использование внутренних функций (nested functions)
+
+func printSmthg(name: String) {
+
+    print("1️⃣ The persons name is \(name)")
+    
+    func printTwice() {
+        print("2️⃣ Print name second time - \(name)")
+    }
+    printTwice()
+}
+
+print("\n▪️Использование внутренних функций")
+printSmthg(name: persons[0])
+
 // MARK: - Дженерик-функция с условием
+
+func compare<T: Comparable>(_ lhs: T, _ rhs: T) -> Bool {
+    return lhs < rhs
+}
+
+print("\n▪️Дженерик-функция с условием")
+print(compare(4, 6))
+print(compare(4, 4))
+print(compare(4, 0))
+print(compare("a", "b"))
+print(compare("f", "f"))
+print(compare("z", "d"))
