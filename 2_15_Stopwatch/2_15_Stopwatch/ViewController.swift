@@ -9,6 +9,7 @@
 //Реализовать Timer на RunLoop для вызова события обновления текста надписи раз в секунду и вывода количества секунд в форматированном виде.
 //По кнопкам "Старт" и "Стоп" нужно управлять таймером. После повторного старта счет идет с того же места. В зависимости от состояния кнопку "Старт" или "Стоп" нужно дизейблить
 //При сворачивании приложения таймер нужно останавливать
+///when your app enters the background, iOS pauses any running timers. And when the app enters the foreground again, iOS resumes the timers.
 //При разворачивании таймер и счет нужно пускать с того же места, если до сворачивания таймер работал.
 
 import UIKit
@@ -32,14 +33,14 @@ class ViewController: UIViewController {
 
     // MARK: Actions
     @IBAction func didTapStart(_ sender: Any) {
-        print(#function)
+//        print(#function)
         startButton.isEnabled = false
         stopButton.isEnabled = true
         startTimer()
     }
     
     @IBAction func didTapStop(_ sender: Any) {
-        print(#function)
+//        print(#function)
         startButton.isEnabled = true
         stopButton.isEnabled = false
         stopTimer()
