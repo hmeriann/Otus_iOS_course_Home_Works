@@ -1,6 +1,6 @@
 import Foundation
 
-//Функция, принимающая функцию как параметр
+// MARK: - Функция, принимающая функцию как параметр
 func luckyNumberForName(name: String, _ lotteryHandler: (String, Int) -> String) -> String {
     let luckyNumber = Int(arc4random() % 100)
     return lotteryHandler(name, luckyNumber)
@@ -15,10 +15,24 @@ class FunLottery {
 let funLottery = FunLottery()
 print(luckyNumberForName(name: "Mr. Roboto", funLottery.lotteryHandler))
 
-//Функция с несколькими замыканиями
+// MARK: - Функция с несколькими замыканиями
+
+let printAction = { (action: String) in
+    print("Look how I can \(action)")
+}
+
+let printSum = { (x: Int, y: Int) in
+    print("The sum of X and Y is \(String(x+y))")
+}
+
+func abilities(printAction: () -> Void, printSum: () -> Void) {
+    printAction((action: "run") -> Void)
+    printSum(4, 8)
+}
 
 
-//Функция с autoclosure
-//Использование внутренних функций
-//Дженерик-функция с условием
-//В Playground добавьте пример для демонстрации работы.
+
+
+// MARK: - Функция с autoclosure
+// MARK: - Использование внутренних функций
+// MARK: - Дженерик-функция с условием
