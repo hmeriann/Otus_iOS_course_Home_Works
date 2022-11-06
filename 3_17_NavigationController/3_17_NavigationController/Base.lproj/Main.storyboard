@@ -11,7 +11,7 @@
         <!--Yellow-->
         <scene sceneID="Yzw-iI-CVx">
             <objects>
-                <viewController id="HEd-KJ-RZs" customClass="YellowViewController" sceneMemberID="viewController">
+                <viewController id="HEd-KJ-RZs" customClass="YellowViewController" customModule="__17_NavigationController" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eWI-FD-TkJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,7 +51,7 @@
         <!--Gray-->
         <scene sceneID="jth-KZ-njp">
             <objects>
-                <viewController id="0kk-AI-yvr" sceneMemberID="viewController">
+                <viewController id="0kk-AI-yvr" customClass="GrayViewController" customModule="__17_NavigationController" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QT0-aC-dSX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,7 +67,7 @@
         <!--White-->
         <scene sceneID="t0A-ji-HVA">
             <objects>
-                <viewController id="ds4-p1-NrJ" sceneMemberID="viewController">
+                <viewController id="ds4-p1-NrJ" customClass="WhiteViewController" customModule="__17_NavigationController" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IGo-E8-GOv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,7 +83,7 @@
         <!--Green-->
         <scene sceneID="Pkc-22-64d">
             <objects>
-                <viewController id="gsc-vE-n4Z" customClass="GreenViewController" sceneMemberID="viewController">
+                <viewController id="gsc-vE-n4Z" customClass="GreenViewController" customModule="__17_NavigationController" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="09l-zp-uuH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -125,7 +125,7 @@
         <!--Orange-->
         <scene sceneID="mgA-yk-C3b">
             <objects>
-                <viewController id="I0X-lA-ugd" sceneMemberID="viewController">
+                <viewController id="I0X-lA-ugd" customClass="OrangeViewController" customModule="__17_NavigationController" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zo2-vQ-OTw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -141,7 +141,7 @@
         <!--Teal-->
         <scene sceneID="6JI-PD-JE8">
             <objects>
-                <viewController id="Qff-KM-Igb" sceneMemberID="viewController">
+                <viewController id="Qff-KM-Igb" customClass="TealViewController" customModule="__17_NavigationController" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pjD-oF-YuC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -194,11 +194,11 @@
             </objects>
             <point key="canvasLocation" x="643" y="-721"/>
         </scene>
-        <!--Orange-->
+        <!--Yellow-->
         <scene sceneID="rQs-eB-o4q">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uYM-bC-mb6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Orange" id="MvU-ek-4ss"/>
+                    <tabBarItem key="tabBarItem" title="Yellow" id="MvU-ek-4ss"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Our-vR-yOQ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

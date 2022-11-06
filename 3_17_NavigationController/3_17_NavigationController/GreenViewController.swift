@@ -15,12 +15,30 @@
 import UIKit
 
 class GreenViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-
-
+        
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            print("🟢", #function)
+        }
+        
+        override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+            print("🟢", #function)
+        }
+        
+        override func viewWillDisappear(_ animated: Bool) {
+            super.viewWillDisappear(animated)
+            print("🟢", #function)
+        }
+        
+        override func viewWillLayoutSubviews() {
+            super.viewWillLayoutSubviews()
+            print("🟢", #function)
+        }
+        
+        override func viewDidLayoutSubviews() {
+            super.viewDidLayoutSubviews()
+            print("🟢", #function)
+        }
 }
 
