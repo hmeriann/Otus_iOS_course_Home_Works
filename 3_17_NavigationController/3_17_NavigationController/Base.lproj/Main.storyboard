@@ -106,14 +106,31 @@
                                     <segue destination="Qff-KM-Igb" kind="show" id="WFc-Zn-rkl"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press the button and see the next screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLS-TG-J90">
+                                <rect key="frame" x="51" y="188" width="312" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can also switch screens via tap bar below" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xX8-ha-cgJ">
+                                <rect key="frame" x="33.5" y="742" width="347" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="P7S-QZ-N0y"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
+                            <constraint firstItem="pLS-TG-J90" firstAttribute="centerX" secondItem="09l-zp-uuH" secondAttribute="centerX" id="63Z-zq-12b"/>
+                            <constraint firstItem="P7S-QZ-N0y" firstAttribute="bottom" secondItem="xX8-ha-cgJ" secondAttribute="bottom" constant="50" id="7Uc-te-7Qs"/>
+                            <constraint firstItem="xX8-ha-cgJ" firstAttribute="centerX" secondItem="09l-zp-uuH" secondAttribute="centerX" id="9Np-9M-EYj"/>
                             <constraint firstItem="WlY-id-duE" firstAttribute="top" secondItem="Uhe-p6-Lmk" secondAttribute="bottom" constant="100" id="aqs-1q-3jz"/>
+                            <constraint firstItem="pLS-TG-J90" firstAttribute="top" secondItem="P7S-QZ-N0y" secondAttribute="top" constant="100" id="f0e-Jb-SNo"/>
                             <constraint firstItem="Uhe-p6-Lmk" firstAttribute="centerX" secondItem="09l-zp-uuH" secondAttribute="centerX" id="qB7-a5-Idv"/>
                             <constraint firstItem="Uhe-p6-Lmk" firstAttribute="top" secondItem="P7S-QZ-N0y" secondAttribute="top" constant="200" id="tdS-Sb-w5A"/>
                             <constraint firstItem="WlY-id-duE" firstAttribute="centerX" secondItem="09l-zp-uuH" secondAttribute="centerX" id="wLd-Ju-Za7"/>
+                            <constraint firstItem="xX8-ha-cgJ" firstAttribute="centerX" secondItem="09l-zp-uuH" secondAttribute="centerX" id="yfX-A5-NRu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Green" id="gTA-BH-trr"/>
@@ -129,8 +146,22 @@
                     <view key="view" contentMode="scaleToFill" id="Zo2-vQ-OTw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5S-hD-C6S">
+                                <rect key="frame" x="171" y="432.5" width="72" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="To Blue"/>
+                                <connections>
+                                    <segue destination="fNg-rF-dLY" kind="show" id="FsB-eK-VUB"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="qYr-Sj-jlF"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="r5S-hD-C6S" firstAttribute="centerX" secondItem="Zo2-vQ-OTw" secondAttribute="centerX" id="7Gl-r3-jeL"/>
+                            <constraint firstItem="r5S-hD-C6S" firstAttribute="centerY" secondItem="Zo2-vQ-OTw" secondAttribute="centerY" id="AT9-mB-ynY"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Orange" id="yYS-fA-5Lc"/>
                 </viewController>
@@ -232,6 +263,39 @@
             </objects>
             <point key="canvasLocation" x="1563.768115942029" y="-449.33035714285711"/>
         </scene>
+        <!--Blue View Controller-->
+        <scene sceneID="5I1-Pz-Y06">
+            <objects>
+                <viewController id="fNg-rF-dLY" customClass="BlueViewController" customModule="__17_NavigationController" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9UW-6b-Ju2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6K-tw-3GR">
+                                <rect key="frame" x="139" y="426.5" width="136.5" height="43"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="TO START">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="24"/>
+                                    <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onStartButtonTapped:" destination="fNg-rF-dLY" eventType="touchUpInside" id="l8h-Gc-2c1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DBz-tN-sjJ"/>
+                        <color key="backgroundColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="s6K-tw-3GR" firstAttribute="centerX" secondItem="9UW-6b-Ju2" secondAttribute="centerX" id="DdN-bp-lnm"/>
+                            <constraint firstItem="s6K-tw-3GR" firstAttribute="centerY" secondItem="9UW-6b-Ju2" secondAttribute="centerY" id="RK0-ge-kNw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9Kk-rY-zeq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Os-m9-gvf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4555" y="-1221"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
@@ -245,6 +309,9 @@
         </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
