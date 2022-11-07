@@ -24,29 +24,61 @@ class ViewController: UIViewController {
     // MARK: Properties
     private var timer: Timer?
     private var value: Int = 0
-    
+    private var isTimerStarted: Bool = false
+    private var isAppActive: Bool = true
+
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        updateState()
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(
+            self,
+            selector: #selector(appMovedToBackground),
+            name: UIApplication.willResignActiveNotification, object: nil)
+        notificationCenter.addObserver(
+            self,
+            selector: #selector(appMovedToActive),
+            name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
+    
+    @objc func appMovedToBackground() {
+        print("😶‍🌫️", #function)
+        isAppActive = false
+        updateState()
+    }
+    
+    @objc func appMovedToActive() {
+        print("⚠️", #function)
+        isAppActive = true
+        updateState()
     }
 
     // MARK: Actions
     @IBAction func didTapStart(_ sender: Any) {
 //        print(#function)
-        startButton.isEnabled = false
-        stopButton.isEnabled = true
-        startTimer()
+        isTimerStarted = true
+        updateState()
     }
     
     @IBAction func didTapStop(_ sender: Any) {
 //        print(#function)
-        startButton.isEnabled = true
-        stopButton.isEnabled = false
-        stopTimer()
+        isTimerStarted = false
+        updateState()
     }
     
     // MARK: Private
+    
+    private func updateState() {
+        startButton.isEnabled = !isTimerStarted
+        stopButton.isEnabled = isTimerStarted
+        if isTimerStarted && isAppActive {
+            startTimer()
+        } else {
+            stopTimer()
+        }
+    }
+    
     private func startTimer() {
         timer?.invalidate()
         let timer = Timer(
