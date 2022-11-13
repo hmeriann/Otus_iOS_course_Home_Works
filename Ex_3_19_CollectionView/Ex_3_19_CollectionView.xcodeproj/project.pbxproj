@@ -13,6 +13,7 @@
 		9B0F7138292130A8004DA976 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B0F7136292130A8004DA976 /* Main.storyboard */; };
 		9B0F713A292130AA004DA976 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B0F7139292130AA004DA976 /* Assets.xcassets */; };
 		9B0F713D292130AA004DA976 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B0F713B292130AA004DA976 /* LaunchScreen.storyboard */; };
+		9B98B06E2921A89E002BA368 /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B98B06D2921A89E002BA368 /* PhotoCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		9B0F7139292130AA004DA976 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B0F713C292130AA004DA976 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B0F713E292130AA004DA976 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B98B06D2921A89E002BA368 /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				9B0F7139292130AA004DA976 /* Assets.xcassets */,
 				9B0F713B292130AA004DA976 /* LaunchScreen.storyboard */,
 				9B0F713E292130AA004DA976 /* Info.plist */,
+				9B98B06D2921A89E002BA368 /* PhotoCollectionViewController.swift */,
 			);
 			path = Ex_3_19_CollectionView;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				9B0F7135292130A8004DA976 /* ViewController.swift in Sources */,
 				9B0F7131292130A8004DA976 /* AppDelegate.swift in Sources */,
 				9B0F7133292130A8004DA976 /* SceneDelegate.swift in Sources */,
+				9B98B06E2921A89E002BA368 /* PhotoCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
