@@ -23,7 +23,7 @@ final class ToDoTableViewCell: UITableViewCell {
     
     private func setUpUI() {
         toDoLabel.textColor = .red
-        self.addSubview(toDoLabel)
+        addSubview(toDoLabel)
         NSLayoutConstraint.activate([
             toDoLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8),
             toDoLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant:  -8),

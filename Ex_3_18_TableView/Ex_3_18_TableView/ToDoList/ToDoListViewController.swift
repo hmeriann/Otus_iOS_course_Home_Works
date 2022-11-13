@@ -17,7 +17,11 @@ import UIKit
 final class ToDoListViewController: UIViewController {
     
     // MARK: Dependencies
-    let presenter = ToDoListPresenter()
+    private lazy var presenter: ToDoListPresenter = {
+        let presenter = ToDoListPresenter()
+        presenter.viewController = self
+        return presenter
+    }()
     
     // MARK: UI
     private lazy var tableView: UITableView = {
@@ -29,6 +33,7 @@ final class ToDoListViewController: UIViewController {
             ToDoTableViewCell.self,
             forCellReuseIdentifier: "ToDoTableViewCell"
         )
+        
         return tableView
     }()
     

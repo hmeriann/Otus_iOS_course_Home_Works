@@ -9,21 +9,39 @@ import UIKit
 
 class ToDoDetailsViewController: UIViewController {
 
-    var language: String = ""
+    var toDo: ToDo?
+    
+    private lazy var toDoLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .green
-        let languageLabel = UILabel()
-        languageLabel.text = language
-        languageLabel.textColor = .red
-        languageLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        view.addSubview(languageLabel)
-        languageLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        languageLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        languageLabel.widthAnchor.constraint(equalToConstant: 100)
-        languageLabel.heightAnchor.constraint(equalToConstant: 25)
+        setUpUI()
+        configure()
     }
+    
+    private func setUpUI() {
+        toDoLabel.textColor = .purple
+        view.backgroundColor = .green
+        view.addSubview(toDoLabel)
+        
+        NSLayoutConstraint.activate([
+            toDoLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 8),
+            toDoLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:  -8),
+            toDoLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            toDoLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:  -20)
+        ])
+    }
+  
+    func configure() {
+        toDoLabel.text = toDo?.title
+    }
+    
+//    func configure(with toDo: ToDo) {
+//        toDoLabel.text = toDo.title
+//    }
 }

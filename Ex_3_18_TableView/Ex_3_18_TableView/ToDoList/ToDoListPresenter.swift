@@ -9,6 +9,8 @@ import UIKit
 
 final class ToDoListPresenter: NSObject {
     
+    weak var viewController: UIViewController?
+
     let items: [ToDo] = [
         ToDo(title: "Make photos"),
         ToDo(title: "Print applications"),
@@ -20,9 +22,11 @@ final class ToDoListPresenter: NSObject {
 
 extension ToDoListPresenter: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let cellViewController = CellViewController()
-//        cellViewController.language = dataArray[indexPath.row]
-//        present(cellViewController, animated: true)
+        let toDoDetailsViewController = ToDoDetailsViewController()
+        let itemToPresentDetails = items[indexPath.row]
+        toDoDetailsViewController.toDo = itemToPresentDetails
+        viewController?.present(toDoDetailsViewController, animated: true)
+//        print("PRESENTER", #function,"\(itemToPresentDetails)")
     }
 }
 
