@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PhotoCollectionViewCell: UICollectionViewCell {
+final class PhotoCollectionViewCell: UICollectionViewCell {
 
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
@@ -16,6 +16,21 @@ class PhotoCollectionViewCell: UICollectionViewCell {
 //        imageView.image = UIImage(named: "image0")
         return imageView
     }()
+    
+    private lazy var labelBackgroundView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .gray
+        return view
+    }()
+    
+    private lazy var imageLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 1
+        return label
+    }()
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,8 +41,14 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with imageName: String) {
-        imageView.image = UIImage(named: imageName)
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        print("😡", #function)
+    }
+        
+    func configure(with item: Item) {
+        imageView.image = UIImage(named: item.imageName)
+        imageLabel.text = item.imageDescription
     }
     
     private func setUpUI() {
@@ -37,6 +58,23 @@ class PhotoCollectionViewCell: UICollectionViewCell {
             imageView.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor, constant: -4),
             imageView.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 4),
             imageView.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: -4)
+        ])
+        
+        contentView.addSubview(labelBackgroundView)
+        contentView.addSubview(imageLabel)
+        
+        NSLayoutConstraint.activate([
+            labelBackgroundView.topAnchor.constraint(equalTo: imageLabel.topAnchor, constant: 0),
+            labelBackgroundView.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor, constant: -4),
+            labelBackgroundView.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 4),
+            labelBackgroundView.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: -4)
+        ])
+    
+        NSLayoutConstraint.activate([
+//            imageLabel.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 4),
+            imageLabel.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor, constant: -4),
+            imageLabel.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 4),
+//            imageLabel.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: -4)
         ])
     }
 }

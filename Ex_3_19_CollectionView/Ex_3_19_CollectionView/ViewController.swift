@@ -12,6 +12,31 @@
 
 import UIKit
 
+struct Item {
+    let imageName: String
+    let imageDescription: String
+
+//    static let allItems: [Item] = [
+//        Item(imageName: "image0", imageDescription: "Simon0"),
+//        Item(imageName: "image1", imageDescription: "Simon1"),
+//        Item(imageName: "image2", imageDescription: "Simon2"),
+//        Item(imageName: "image3", imageDescription: "Simon3"),
+//        Item(imageName: "image4", imageDescription: "Simon4"),
+//        Item(imageName: "image5", imageDescription: "Simon5"),
+//        Item(imageName: "image6", imageDescription: "Simon6"),
+//        Item(imageName: "image7", imageDescription: "Simon7"),
+//        Item(imageName: "image8", imageDescription: "Simon8"),
+//    ]
+
+    // creaded the Range<Int> [0, 8]
+    // Range is a sequence as Array
+    // map() takes each element of the sequence and applies the func (what we wrote in {} - init() in our case) to each of the element
+    // We use that func to init each of the Item
+    static let allItems = (0...8).map {
+        Item(imageName: "image\($0)", imageDescription: "Simon\($0)")
+    }
+}
+
 final class ViewController: UIViewController {
     
     // MARK: UI
@@ -38,11 +63,6 @@ final class ViewController: UIViewController {
         return collectionView
     }()
     
-    // MARK: Properties
-    private let imageNames = [
-        "image0", "image1", "image2",
-    ]
-    
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +86,7 @@ final class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageNames.count
+        return Item.allItems.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -75,8 +95,8 @@ extension ViewController: UICollectionViewDataSource {
             withReuseIdentifier: "cell",
             for: indexPath
         ) as? PhotoCollectionViewCell else { return UICollectionViewCell() }
-        let imageName = imageNames[indexPath.item]
-        cell.configure(with: imageName)
+        let item = Item.allItems[indexPath.item]
+        cell.configure(with: item)
         return cell
     }
 }
@@ -94,4 +114,8 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        print("🤯", #function, indexPath)
+    }
 }
