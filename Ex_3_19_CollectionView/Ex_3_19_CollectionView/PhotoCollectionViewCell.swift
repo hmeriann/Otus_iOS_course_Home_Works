@@ -43,7 +43,6 @@ final class PhotoCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        print("😡", #function)
     }
         
     func configure(with item: Item) {

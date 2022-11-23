@@ -33,7 +33,7 @@ struct Item {
     // map() takes each element of the sequence and applies the func (what we wrote in {} - init() in our case) to each of the element
     // We use that func to init each of the Item
     static let allItems = (0...8).map {
-        Item(imageName: "image\($0)", imageDescription: "Simon\($0)")
+        Item(imageName: "image\($0)", imageDescription: "Simon's cat - \($0 + 1)")
     }
 }
 
@@ -66,7 +66,6 @@ final class ViewController: UIViewController {
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("🥶", #function)
         setUpUI()
     }
 
@@ -90,7 +89,6 @@ extension ViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print("😱", indexPath)
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: "cell",
             for: indexPath
@@ -116,6 +114,5 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
         }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        print("🤯", #function, indexPath)
     }
 }
