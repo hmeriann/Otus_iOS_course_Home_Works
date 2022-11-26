@@ -21,10 +21,10 @@
             </objects>
             <point key="canvasLocation" x="-426" y="-148"/>
         </scene>
-        <!--View Controller-->
+        <!--Image List View Controller-->
         <scene sceneID="08M-Rk-02B">
             <objects>
-                <viewController id="eqm-qk-NXt" customClass="ViewController" customModule="Ex_3_19_CollectionView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eqm-qk-NXt" customClass="ImageListViewController" customModule="Ex_3_19_CollectionView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Jj-tH-hTI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

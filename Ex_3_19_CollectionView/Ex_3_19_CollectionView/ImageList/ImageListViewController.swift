@@ -12,32 +12,11 @@
 
 import UIKit
 
-struct Item {
-    let imageName: String
-    let imageDescription: String
-
-//    static let allItems: [Item] = [
-//        Item(imageName: "image0", imageDescription: "Simon0"),
-//        Item(imageName: "image1", imageDescription: "Simon1"),
-//        Item(imageName: "image2", imageDescription: "Simon2"),
-//        Item(imageName: "image3", imageDescription: "Simon3"),
-//        Item(imageName: "image4", imageDescription: "Simon4"),
-//        Item(imageName: "image5", imageDescription: "Simon5"),
-//        Item(imageName: "image6", imageDescription: "Simon6"),
-//        Item(imageName: "image7", imageDescription: "Simon7"),
-//        Item(imageName: "image8", imageDescription: "Simon8"),
-//    ]
-
-    // creaded the Range<Int> [0, 8]
-    // Range is a sequence as Array
-    // map() takes each element of the sequence and applies the func (what we wrote in {} - init() in our case) to each of the element
-    // We use that func to init each of the Item
-    static let allItems = (0...8).map {
-        Item(imageName: "image\($0)", imageDescription: "Simon's cat - \($0 + 1)")
-    }
+protocol IImageListViewController {
+    
 }
 
-final class ViewController: UIViewController {
+final class ImageListViewController: UIViewController {
     
     // MARK: UI
     private lazy var collectionViewLayout: UICollectionViewFlowLayout = {
@@ -63,6 +42,21 @@ final class ViewController: UIViewController {
         return collectionView
     }()
     
+    
+    // MARK: Dependencies
+    private let presenter: IImageListPresenter = ImageListPresenter()
+    
+    // не используется, потому что VCиз сториборда этот создается
+//    init(
+//        presenter: IImageListPresenter
+//    ) {
+//        self.presenter = presenter
+//    }
+    
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+//
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,12 +74,12 @@ final class ViewController: UIViewController {
             collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16)
         ])
     }
-    
 }
 
-extension ViewController: UICollectionViewDataSource {
+// MARK: - UICollectionViewDataSource
+extension ImageListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Item.allItems.count
+        return presenter.itemsCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -93,13 +87,28 @@ extension ViewController: UICollectionViewDataSource {
             withReuseIdentifier: "cell",
             for: indexPath
         ) as? PhotoCollectionViewCell else { return UICollectionViewCell() }
-        let item = Item.allItems[indexPath.item]
+        let item = presenter.getItem(for: indexPath)
         cell.configure(with: item)
         return cell
     }
 }
 
-extension ViewController: UICollectionViewDelegateFlowLayout {
+// MARK: - UICollectionViewDelegate
+extension ImageListViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("🫣 ", #function, "indexPath", indexPath)
+        let detailViewController = UIViewController() // imageDetailsViewController нужно будет сделать
+        detailViewController.view.backgroundColor = .purple
+        present(detailViewController, animated: true, completion: nil)
+        presenter.userDidSelectItem(at: indexPath)
+        
+        // presenter.userDidSelectItem(at: indexPath) - сделает id (Item) объекта по indexPath,
+        // а в презентере должен быть роутер / флоу координатор, который умеет показывать детали картинки или картинку крупным планом.
+        // если это флоу координатор, то у него в качестве проперти будет другой флоу координатор (PictureDetailsFlowCoorinator), у которого будет метод start(), куда мы передадим этот id, на этом этапе будет показана картинка
+    }
+}
+
+extension ImageListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
