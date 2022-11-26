@@ -44,7 +44,7 @@ final class ImageListViewController: UIViewController {
     
     
     // MARK: Dependencies
-    private let presenter: IImageListPresenter = ImageListPresenter()
+    private let presenter: IImageListPresenter & IImageListDataSource  = ImageListPresenter()
     
     // не используется, потому что VCиз сториборда этот создается
 //    init(

@@ -51,6 +51,6 @@ extension ImageListPresenter: IImageListDataSource {
 extension ImageListPresenter: IImageListPresenter {
     
     func userDidSelectItem(at indexPath: IndexPath) {
-        print("🥶 ", #function, indexPath)
+//        print("🥶 ", #function, indexPath)
     }
 }
