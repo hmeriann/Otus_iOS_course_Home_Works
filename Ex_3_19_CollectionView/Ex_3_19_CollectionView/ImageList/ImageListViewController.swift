@@ -44,6 +44,7 @@ final class ImageListViewController: UIViewController {
     
     
     // MARK: Dependencies
+    // потому что items count есть только в протоколе IImageListDataSource
     private let presenter: IImageListPresenter & IImageListDataSource  = ImageListPresenter()
     
     // не используется, потому что VCиз сториборда этот создается
@@ -95,10 +96,10 @@ extension ImageListViewController: UICollectionViewDataSource {
 
 // MARK: - UICollectionViewDelegate
 extension ImageListViewController: UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("🫣 ", #function, "indexPath", indexPath)
-        let detailViewController = UIViewController() // imageDetailsViewController нужно будет сделать
-        detailViewController.view.backgroundColor = .purple
+//        print("🫣 ", #function, "indexPath", indexPath)
+        let detailViewController = ImageDetailsViewController(imageItem: presenter.getItem(for: indexPath))
         present(detailViewController, animated: true, completion: nil)
         presenter.userDidSelectItem(at: indexPath)
         

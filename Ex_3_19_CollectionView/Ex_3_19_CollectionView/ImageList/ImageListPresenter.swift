@@ -10,7 +10,7 @@ import Foundation
 protocol IImageListDataSource {
     
     var itemsCount: Int { get }
-    func getItem(for indexPath: IndexPath) -> Item
+    func getItem(for indexPath: IndexPath) -> ImageItem
 }
 
 protocol IImageListPresenter {
@@ -20,14 +20,14 @@ protocol IImageListPresenter {
 
 final class ImageListPresenter {
    
-    private lazy var imageItems: [Item] = {
+    private lazy var imageItems: [ImageItem] = {
         
         // creaded the Range<Int> [0, 8]
         // Range is a sequence as Array
         // map() takes each element of the sequence and applies the func (what we wrote in {} - init() in our case) to each of the element
         // We use that func to init each of the Item
         return (0...8).map {
-            Item(
+            ImageItem(
                 imageName: "image\($0)",
                 imageDescription: "Simon's cat - \($0 + 1)"
             )
@@ -42,7 +42,7 @@ extension ImageListPresenter: IImageListDataSource {
         return imageItems.count
     }
     
-    func getItem(for indexPath: IndexPath) -> Item {
+    func getItem(for indexPath: IndexPath) -> ImageItem {
         return imageItems[indexPath.item]
     }
 }

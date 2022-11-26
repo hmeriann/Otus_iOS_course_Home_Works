@@ -45,7 +45,7 @@ final class PhotoCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
     }
         
-    func configure(with item: Item) {
+    func configure(with item: ImageItem) {
         imageView.image = UIImage(named: item.imageName)
         imageLabel.text = item.imageDescription
     }

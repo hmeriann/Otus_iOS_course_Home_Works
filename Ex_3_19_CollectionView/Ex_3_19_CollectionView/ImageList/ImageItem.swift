@@ -5,7 +5,7 @@
 //  Created by Zuleykha Pavlichenkova on 25.11.2022.
 //
 
-struct Item {
+struct ImageItem {
     let imageName: String
     let imageDescription: String
 }
