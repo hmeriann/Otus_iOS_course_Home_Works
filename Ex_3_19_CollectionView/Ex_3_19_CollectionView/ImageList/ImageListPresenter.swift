@@ -7,9 +7,14 @@
 
 import Foundation
 
-protocol IImageListPresenter {
+protocol IImageListDataSource {
+    
     var itemsCount: Int { get }
     func getItem(for indexPath: IndexPath) -> Item
+}
+
+protocol IImageListPresenter {
+
     func userDidSelectItem(at indexPath: IndexPath)
 }
 
@@ -30,8 +35,8 @@ final class ImageListPresenter {
     }()
 }
 
-// MARK: - IImageListPresenter
-extension ImageListPresenter: IImageListPresenter {
+// MARK: - IImageListDataSource
+extension ImageListPresenter: IImageListDataSource {
 
     var itemsCount: Int {
         return imageItems.count
@@ -42,7 +47,8 @@ extension ImageListPresenter: IImageListPresenter {
     }
 }
 
-extension ImageListPresenter {
+// MARK: - IImageListPresenter
+extension ImageListPresenter: IImageListPresenter {
     
     func userDidSelectItem(at indexPath: IndexPath) {
         print("🥶 ", #function, indexPath)
