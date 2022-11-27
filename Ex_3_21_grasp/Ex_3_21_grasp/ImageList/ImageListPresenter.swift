@@ -19,13 +19,12 @@ protocol IImageListPresenter {
 }
 
 final class ImageListPresenter {
-   
+   // MARK: Dependencie
+    private let router: IImageListRouter
+    
+    // MARK: Data
     private lazy var imageItems: [ImageItem] = {
-        
-        // creaded the Range<Int> [0, 8]
-        // Range is a sequence as Array
-        // map() takes each element of the sequence and applies the func (what we wrote in {} - init() in our case) to each of the element
-        // We use that func to init each of the Item
+
         return (0...8).map {
             ImageItem(
                 imageName: "image\($0)",
@@ -33,6 +32,11 @@ final class ImageListPresenter {
             )
         }
     }()
+    
+    // MARK: Init
+    init(router: IImageListRouter) {
+        self.router = router
+    }
 }
 
 // MARK: - IImageListDataSource
@@ -51,6 +55,7 @@ extension ImageListPresenter: IImageListDataSource {
 extension ImageListPresenter: IImageListPresenter {
     
     func userDidSelectItem(at indexPath: IndexPath) {
-//        print("🥶 ", #function, indexPath)
+        let imageItem = getItem(for: indexPath)
+        router.showItemDetails(with: imageItem)
     }
 }

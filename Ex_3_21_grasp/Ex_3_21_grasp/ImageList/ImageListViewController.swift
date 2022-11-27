@@ -45,19 +45,19 @@ final class ImageListViewController: UIViewController {
     
     // MARK: Dependencies
     // потому что items count есть только в протоколе IImageListDataSource
-    private let presenter: IImageListPresenter & IImageListDataSource  = ImageListPresenter()
+    private let presenter: IImageListPresenter & IImageListDataSource
     
-    // не используется, потому что VCиз сториборда этот создается
-//    init(
-//        presenter: IImageListPresenter
-//    ) {
-//        self.presenter = presenter
-//    }
+    init(
+        presenter: IImageListPresenter & IImageListDataSource
+    ) {
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+    }
     
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +67,7 @@ final class ImageListViewController: UIViewController {
     // MARK: Private
     private func setUpUI() {
         view.addSubview(collectionView)
+        view.backgroundColor = .systemBackground
         
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
@@ -98,9 +99,8 @@ extension ImageListViewController: UICollectionViewDataSource {
 extension ImageListViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        print("🫣 ", #function, "indexPath", indexPath)
-        let detailViewController = ImageDetailsViewController(imageItem: presenter.getItem(for: indexPath))
-        present(detailViewController, animated: true, completion: nil)
+        print("🫣 ", #function, "indexPath", indexPath)
+        
         presenter.userDidSelectItem(at: indexPath)
         
         // presenter.userDidSelectItem(at: indexPath) - сделает id (Item) объекта по indexPath,
