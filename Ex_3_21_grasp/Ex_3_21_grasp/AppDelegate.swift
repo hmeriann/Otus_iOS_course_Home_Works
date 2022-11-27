@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Ex_3_19_CollectionView
+//  Ex_3_21_grasp
 //
 //  Created by Zuleykha Pavlichenkova on 13.11.2022.
 //

@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9B0F712D292130A8004DA976 /* Ex_3_19_CollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ex_3_19_CollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B0F712D292130A8004DA976 /* Ex_3_21_grasp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ex_3_21_grasp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B0F7130292130A8004DA976 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B0F7132292130A8004DA976 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9B0F7134292130A8004DA976 /* ImageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		9B0F7124292130A8004DA976 = {
 			isa = PBXGroup;
 			children = (
-				9B0F712F292130A8004DA976 /* Ex_3_19_CollectionView */,
+				9B0F712F292130A8004DA976 /* Ex_3_21_grasp */,
 				9B0F712E292130A8004DA976 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,12 +56,12 @@
 		9B0F712E292130A8004DA976 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9B0F712D292130A8004DA976 /* Ex_3_19_CollectionView.app */,
+				9B0F712D292130A8004DA976 /* Ex_3_21_grasp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9B0F712F292130A8004DA976 /* Ex_3_19_CollectionView */ = {
+		9B0F712F292130A8004DA976 /* Ex_3_21_grasp */ = {
 			isa = PBXGroup;
 			children = (
 				9B34722C29325B2F00688CF8 /* ImageDetails */,
@@ -73,7 +73,7 @@
 				9B0F713B292130AA004DA976 /* LaunchScreen.storyboard */,
 				9B0F713E292130AA004DA976 /* Info.plist */,
 			);
-			path = Ex_3_19_CollectionView;
+			path = Ex_3_21_grasp;
 			sourceTree = "<group>";
 		};
 		9B3472272930C7B400688CF8 /* ImageList */ = {
@@ -98,9 +98,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9B0F712C292130A8004DA976 /* Ex_3_19_CollectionView */ = {
+		9B0F712C292130A8004DA976 /* Ex_3_21_grasp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9B0F7141292130AA004DA976 /* Build configuration list for PBXNativeTarget "Ex_3_19_CollectionView" */;
+			buildConfigurationList = 9B0F7141292130AA004DA976 /* Build configuration list for PBXNativeTarget "Ex_3_21_grasp" */;
 			buildPhases = (
 				9B0F7129292130A8004DA976 /* Sources */,
 				9B0F712A292130A8004DA976 /* Frameworks */,
@@ -110,9 +110,9 @@
 			);
 			dependencies = (
 			);
-			name = Ex_3_19_CollectionView;
+			name = Ex_3_21_grasp;
 			productName = Ex_3_19_CollectionView;
-			productReference = 9B0F712D292130A8004DA976 /* Ex_3_19_CollectionView.app */;
+			productReference = 9B0F712D292130A8004DA976 /* Ex_3_21_grasp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -130,7 +130,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9B0F7128292130A8004DA976 /* Build configuration list for PBXProject "Ex_3_19_CollectionView" */;
+			buildConfigurationList = 9B0F7128292130A8004DA976 /* Build configuration list for PBXProject "Ex_3_21_grasp" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -143,7 +143,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9B0F712C292130A8004DA976 /* Ex_3_19_CollectionView */,
+				9B0F712C292130A8004DA976 /* Ex_3_21_grasp */,
 			);
 		};
 /* End PBXProject section */
@@ -323,7 +323,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5XJD2AR6K6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Ex_3_19_CollectionView/Info.plist;
+				INFOPLIST_FILE = Ex_3_21_grasp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -351,7 +351,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5XJD2AR6K6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Ex_3_19_CollectionView/Info.plist;
+				INFOPLIST_FILE = Ex_3_21_grasp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -373,7 +373,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9B0F7128292130A8004DA976 /* Build configuration list for PBXProject "Ex_3_19_CollectionView" */ = {
+		9B0F7128292130A8004DA976 /* Build configuration list for PBXProject "Ex_3_21_grasp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9B0F713F292130AA004DA976 /* Debug */,
@@ -382,7 +382,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9B0F7141292130AA004DA976 /* Build configuration list for PBXNativeTarget "Ex_3_19_CollectionView" */ = {
+		9B0F7141292130AA004DA976 /* Build configuration list for PBXNativeTarget "Ex_3_21_grasp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9B0F7142292130AA004DA976 /* Debug */,

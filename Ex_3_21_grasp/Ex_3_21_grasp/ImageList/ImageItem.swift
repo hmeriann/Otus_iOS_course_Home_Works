@@ -1,6 +1,6 @@
 //
 //  ImageItem.swift
-//  Ex_3_19_CollectionView
+//  Ex_3_21_grasp
 //
 //  Created by Zuleykha Pavlichenkova on 25.11.2022.
 //
