@@ -19,7 +19,11 @@ protocol IImageListPresenter {
 }
 
 final class ImageListPresenter {
-   
+    
+    // MARK: Dependencie
+    private let router: IImageListRouter
+    
+    // MARK: Data
     private lazy var imageItems: [ImageItem] = {
         
         // creaded the Range<Int> [0, 8]
@@ -33,6 +37,11 @@ final class ImageListPresenter {
             )
         }
     }()
+
+    // MARK: Init
+    init(router: IImageListRouter) {
+        self.router = router
+    }
 }
 
 // MARK: - IImageListDataSource
@@ -52,5 +61,7 @@ extension ImageListPresenter: IImageListPresenter {
     
     func userDidSelectItem(at indexPath: IndexPath) {
 //        print("🥶 ", #function, indexPath)
+        let imageItem = getItem(for: indexPath)
+        router.showItemDetails(with: imageItem)
     }
 }
