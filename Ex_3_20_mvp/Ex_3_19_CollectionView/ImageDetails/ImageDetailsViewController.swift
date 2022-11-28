@@ -7,6 +7,9 @@
 
 import UIKit
 
+protocol IImageDetailsView: AnyObject {
+    func configure(with imageItem: ImageItem)
+}
 
 final class ImageDetailsViewController: UIViewController {
     
@@ -15,7 +18,7 @@ final class ImageDetailsViewController: UIViewController {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: imageItem.imageName)
+//        imageView.image = UIImage(named: imageItem.imageName)
         return imageView
     }()
     
@@ -30,17 +33,19 @@ final class ImageDetailsViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 1
-        label.text = imageItem.imageDescription
+//        label.text = imageItem.imageDescription
         return label
     }()
-    
-    private var imageItem: ImageItem
+        
+    // MARK: Dependencies
+    let presenter: IImageDetailsPresenter
     
     // MARK: init
-    init(imageItem: ImageItem) {
-        self.imageItem = imageItem
+    init(presenter: IImageDetailsPresenter) {
+        self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
+
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -49,6 +54,7 @@ final class ImageDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
+        presenter.onViewDidLoad()
     }
     
     private func setUpUI() {
@@ -63,5 +69,14 @@ final class ImageDetailsViewController: UIViewController {
 
         stackView.addArrangedSubview(imageView)
         stackView.addArrangedSubview(label)
+    }
+}
+
+
+extension ImageDetailsViewController: IImageDetailsView {
+    
+    func configure(with imageItem: ImageItem) {
+        imageView.image = UIImage(named: imageItem.imageName)
+        label.text = imageItem.imageDescription
     }
 }

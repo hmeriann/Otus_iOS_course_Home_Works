@@ -16,6 +16,7 @@
 		9B34722E29325B4A00688CF8 /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B34722D29325B4A00688CF8 /* ImageDetailsViewController.swift */; };
 		9B6CA2342934D08300624CE4 /* ImageListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6CA2332934D08300624CE4 /* ImageListRouter.swift */; };
 		9B6CA2372934D0C400624CE4 /* UIViewController+TransitionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6CA2362934D0C400624CE4 /* UIViewController+TransitionHandler.swift */; };
+		9B6CA2392934D40B00624CE4 /* ImageDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6CA2382934D40B00624CE4 /* ImageDetailsPresenter.swift */; };
 		9BEA35B2292D413A00CB4853 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEA35B1292D413A00CB4853 /* PhotoCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		9B34722D29325B4A00688CF8 /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewController.swift; sourceTree = "<group>"; };
 		9B6CA2332934D08300624CE4 /* ImageListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListRouter.swift; sourceTree = "<group>"; };
 		9B6CA2362934D0C400624CE4 /* UIViewController+TransitionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+TransitionHandler.swift"; sourceTree = "<group>"; };
+		9B6CA2382934D40B00624CE4 /* ImageDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsPresenter.swift; sourceTree = "<group>"; };
 		9BEA35B1292D413A00CB4853 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				9B34722D29325B4A00688CF8 /* ImageDetailsViewController.swift */,
+				9B6CA2382934D40B00624CE4 /* ImageDetailsPresenter.swift */,
 			);
 			path = ImageDetails;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B6CA2342934D08300624CE4 /* ImageListRouter.swift in Sources */,
+				9B6CA2392934D40B00624CE4 /* ImageDetailsPresenter.swift in Sources */,
 				9B34722B2930DA7300688CF8 /* ImageItem.swift in Sources */,
 				9B6CA2372934D0C400624CE4 /* UIViewController+TransitionHandler.swift in Sources */,
 				9B0F7135292130A8004DA976 /* ImageListViewController.swift in Sources */,

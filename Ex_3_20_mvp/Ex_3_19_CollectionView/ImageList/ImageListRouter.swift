@@ -21,7 +21,10 @@ final class ImageListRouter {
 extension ImageListRouter: IImageListRouter {
     
     func showItemDetails(with imageItem: ImageItem) {
-        let detailViewController = ImageDetailsViewController(imageItem: imageItem)
+        
+        let presenter = ImageDetailsPresenter(imageItem: imageItem)
+        let detailViewController = ImageDetailsViewController(presenter: presenter)
+        presenter.view = detailViewController
         transitionHandler?.present(detailViewController, animated: true, completion: nil)
     }
 }
