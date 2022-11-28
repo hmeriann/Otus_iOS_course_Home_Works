@@ -13,7 +13,9 @@ final class ImageDetailsAssembly {
         let presenter = ImageDetailsPresenter(imageItem: imageItem)
         let detailViewController = ImageDetailsViewController(presenter: presenter)
         presenter.view = detailViewController
+        let navigationController = UINavigationController()
+        navigationController.viewControllers = [detailViewController]
         
-        return detailViewController
+        return navigationController
     }
 }

@@ -9,6 +9,7 @@ import Foundation
 
 protocol IImageDetailsPresenter {
     func onViewDidLoad()
+    func onCloseButtonTapped()
 }
 
 final class ImageDetailsPresenter {
@@ -24,9 +25,12 @@ final class ImageDetailsPresenter {
 }
 
 extension ImageDetailsPresenter: IImageDetailsPresenter {
+    
+    func onCloseButtonTapped() {
+        view?.dismiss()
+    }
+    
     func onViewDidLoad() {
         view?.configure(with: imageItem)
     }
-    
-    
 }

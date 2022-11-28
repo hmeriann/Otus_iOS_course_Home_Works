@@ -9,6 +9,7 @@ import UIKit
 
 protocol IImageDetailsView: AnyObject {
     func configure(with imageItem: ImageItem)
+    func dismiss()
 }
 
 final class ImageDetailsViewController: UIViewController {
@@ -18,7 +19,6 @@ final class ImageDetailsViewController: UIViewController {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
-//        imageView.image = UIImage(named: imageItem.imageName)
         return imageView
     }()
     
@@ -27,14 +27,6 @@ final class ImageDetailsViewController: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         return stackView
-    }()
-    
-    private lazy var label: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 1
-//        label.text = imageItem.imageDescription
-        return label
     }()
         
     // MARK: Dependencies
@@ -45,7 +37,6 @@ final class ImageDetailsViewController: UIViewController {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
-
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -62,21 +53,32 @@ final class ImageDetailsViewController: UIViewController {
         view.addSubview(stackView)
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 4),
-//            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -4),
             stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 4),
             stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -4)
         ])
 
         stackView.addArrangedSubview(imageView)
-        stackView.addArrangedSubview(label)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: "Close",
+            style: .plain,
+            target: self,
+            action: #selector(closeTapped)
+        )
+    }
+    
+    @objc func closeTapped() {
+        presenter.onCloseButtonTapped()
     }
 }
 
-
 extension ImageDetailsViewController: IImageDetailsView {
+    func dismiss() {
+        dismiss(animated: true)
+    }
     
     func configure(with imageItem: ImageItem) {
         imageView.image = UIImage(named: imageItem.imageName)
-        label.text = imageItem.imageDescription
+        title = imageItem.imageDescription
     }
 }
