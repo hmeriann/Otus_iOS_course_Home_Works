@@ -10,6 +10,14 @@
 		A4C91453294F1387006C9117 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C91452294F1387006C9117 /* AppDelegate.swift */; };
 		A4C9145C294F1388006C9117 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4C9145B294F1388006C9117 /* Assets.xcassets */; };
 		A4C9145F294F1388006C9117 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4C9145D294F1388006C9117 /* LaunchScreen.storyboard */; };
+		A4C9146A294F15FE006C9117 /* EpisodeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C91469294F15FE006C9117 /* EpisodeListViewController.swift */; };
+		A4C9146C294F160F006C9117 /* EpisodeListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C9146B294F160F006C9117 /* EpisodeListAssembly.swift */; };
+		A4C9146E294F161C006C9117 /* EpisodeListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C9146D294F161C006C9117 /* EpisodeListPresenter.swift */; };
+		A4C91471294F1648006C9117 /* EpisodeListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C91470294F1648006C9117 /* EpisodeListInteractor.swift */; };
+		A4C91473294F1657006C9117 /* EpisodeListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C91472294F1657006C9117 /* EpisodeListRouter.swift */; };
+		A4C91476294F19E4006C9117 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C91475294F19E4006C9117 /* Episode.swift */; };
+		A4C91478294F1EC8006C9117 /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C91477294F1EC8006C9117 /* EpisodeTableViewCell.swift */; };
+		A4C9147B294F2089006C9117 /*  UIViewController+TransitionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C9147A294F2089006C9117 /*  UIViewController+TransitionHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +26,14 @@
 		A4C9145B294F1388006C9117 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4C9145E294F1388006C9117 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4C91460294F1388006C9117 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4C91469294F15FE006C9117 /* EpisodeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListViewController.swift; sourceTree = "<group>"; };
+		A4C9146B294F160F006C9117 /* EpisodeListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListAssembly.swift; sourceTree = "<group>"; };
+		A4C9146D294F161C006C9117 /* EpisodeListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListPresenter.swift; sourceTree = "<group>"; };
+		A4C91470294F1648006C9117 /* EpisodeListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListInteractor.swift; sourceTree = "<group>"; };
+		A4C91472294F1657006C9117 /* EpisodeListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListRouter.swift; sourceTree = "<group>"; };
+		A4C91475294F19E4006C9117 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		A4C91477294F1EC8006C9117 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
+		A4C9147A294F2089006C9117 /*  UIViewController+TransitionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " UIViewController+TransitionHandler.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +66,8 @@
 		A4C91451294F1387006C9117 /* Ex_4_24_URLSession */ = {
 			isa = PBXGroup;
 			children = (
+				A4C91479294F207F006C9117 /* Common */,
+				A4C91468294F155B006C9117 /* EpisodeList */,
 				A4C91467294F140E006C9117 /* Assets */,
 				A4C91466294F1403006C9117 /* App */,
 			);
@@ -72,6 +90,28 @@
 				A4C91460294F1388006C9117 /* Info.plist */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		A4C91468294F155B006C9117 /* EpisodeList */ = {
+			isa = PBXGroup;
+			children = (
+				A4C91469294F15FE006C9117 /* EpisodeListViewController.swift */,
+				A4C9146B294F160F006C9117 /* EpisodeListAssembly.swift */,
+				A4C9146D294F161C006C9117 /* EpisodeListPresenter.swift */,
+				A4C91470294F1648006C9117 /* EpisodeListInteractor.swift */,
+				A4C91472294F1657006C9117 /* EpisodeListRouter.swift */,
+				A4C91475294F19E4006C9117 /* Episode.swift */,
+				A4C91477294F1EC8006C9117 /* EpisodeTableViewCell.swift */,
+			);
+			path = EpisodeList;
+			sourceTree = "<group>";
+		};
+		A4C91479294F207F006C9117 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A4C9147A294F2089006C9117 /*  UIViewController+TransitionHandler.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,7 +184,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4C91473294F1657006C9117 /* EpisodeListRouter.swift in Sources */,
+				A4C91478294F1EC8006C9117 /* EpisodeTableViewCell.swift in Sources */,
+				A4C9146A294F15FE006C9117 /* EpisodeListViewController.swift in Sources */,
+				A4C91476294F19E4006C9117 /* Episode.swift in Sources */,
+				A4C9147B294F2089006C9117 /*  UIViewController+TransitionHandler.swift in Sources */,
 				A4C91453294F1387006C9117 /* AppDelegate.swift in Sources */,
+				A4C9146E294F161C006C9117 /* EpisodeListPresenter.swift in Sources */,
+				A4C9146C294F160F006C9117 /* EpisodeListAssembly.swift in Sources */,
+				A4C91471294F1648006C9117 /* EpisodeListInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
