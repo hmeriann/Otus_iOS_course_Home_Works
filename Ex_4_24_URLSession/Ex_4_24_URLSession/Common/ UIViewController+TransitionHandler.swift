@@ -11,7 +11,12 @@ protocol ITransitionHandler: AnyObject {
     func present(_ viewControllerToPresent: UIViewController,
         animated flag: Bool,
       completion: (() -> Void)?)
+    
+    func pushViewController(_: UIViewController, animated: Bool)
+
 }
 
 // retroactive modelling
-extension UIViewController: ITransitionHandler { }
+//extension UIViewController: ITransitionHandler { }
+
+extension UINavigationController: ITransitionHandler {}

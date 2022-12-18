@@ -32,7 +32,7 @@ final class EpisodeListViewController: UIViewController {
     }()
     
     // MARK: Dependencies
-    // потому что items count есть только в протоколе IImageListDataSource
+    // потому что items count есть только в протоколе IEpisodeListDataSource
     private let presenter: IEpisodeListPresenter & IEpisodeListDataSource
     
     init(
@@ -56,6 +56,7 @@ final class EpisodeListViewController: UIViewController {
     private func setUpUI() {
         view.addSubview(tableView)
         view.backgroundColor = .systemBackground
+        title = "List of Episodes"
         
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
@@ -88,4 +89,7 @@ extension EpisodeListViewController: UITableViewDataSource {
 
 extension EpisodeListViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.userDidSelectItem(at: indexPath)
+    }
 }

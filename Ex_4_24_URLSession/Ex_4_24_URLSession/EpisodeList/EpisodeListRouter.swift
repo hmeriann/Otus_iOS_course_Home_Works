@@ -5,7 +5,7 @@
 //  Created by Zuleykha Pavlichenkova on 18.12.2022.
 //
 
-import Foundation
+import UIKit
 
 protocol IEpisodeListRouter {
     // shows details of the element
@@ -22,7 +22,16 @@ extension EpisodeListRouter: IEpisodeListRouter {
     
 // TODO: 
     func showEpisodeDetails(with episode: Episode) {
+        
+        let episodeDetailsViewController = UIViewController()
+        episodeDetailsViewController.view.backgroundColor = .yellow
+        episodeDetailsViewController.title = episode.name
+        
+        // TODO: add Assembly for EpisodeDetails module to assemble Episode Detail view
+        
+        transitionHandler?.pushViewController(episodeDetailsViewController, animated: true)
+        
 //        let episodeDetailsViewController = EpisodeDetailsViewController(episode: episode)
-//        transitionHandler?.present(detailViewController, animated: true, completion: nil)
+//        transitionHandler?.present(episodeDetailsViewController, animated: true, completion: nil)
     }
 }
