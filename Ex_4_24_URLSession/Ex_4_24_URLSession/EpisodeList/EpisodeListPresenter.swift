@@ -30,12 +30,14 @@ final class EpisodeListPresenter {
     // MARK: Data
     private lazy var episodes: [Episode] = {
 
-        return (0...8).map {
-            Episode(
-                id: $0,
-                name: "Episode \($0)"
-            )
-        }
+        return []
+//        return (0...8).map {
+//            Episode(
+//                id: $0,
+//                name: "Episode \($0)",
+//                airDate: ""
+//            )
+//        }
     }()
     
     // MARK: Init
@@ -85,9 +87,11 @@ private extension EpisodeListPresenter {
             // когда предают тип, пишут Тип.self
             do {
                 let episodeResponse = try jsonDecoder.decode(EpisodeResponse.self, from: data)
-                episodeResponse.results.forEach { episode in
-                    print(episode)
-                }
+//                episodeResponse.episodes.forEach { episode in
+//                    print(episode)
+//                }
+                print(episodeResponse.episodes[0])
+                print(episodeResponse.info)
             } catch let decodingError {
                 print(decodingError)
             }

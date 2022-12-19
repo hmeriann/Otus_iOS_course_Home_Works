@@ -7,25 +7,42 @@
 
 import Foundation
 
-//struct Info {
-//    let count : Int
-//    let pages : Int
-//    let next : String?
-//    let prev : String?
-//}
+struct Info: Decodable {
+
+    let count: Int
+    let pages: Int
+    let next: String?
+    let prev: String?
+}
 
 struct Episode: Decodable {
-    let id : Int
-    let name : String
-//    let air_date : String?
-//    let episode : String?
-//    let characters : [String]?
-//    let url : String?
-//    let created : String?
+ 
+    let id: Int
+    let name: String
+    let airDate: String
+    let episode: String
+    let characters: [URL]
+    let url: URL
+    
+    enum CodingKeys: String, CodingKey {
+  
+        case id
+        case name
+        case airDate = "air_date"
+        case episode
+        case characters
+        case url
+    }
 }
 
 // они все должны быть Decodable, чтобы можно было использовать в decode()
 struct EpisodeResponse: Decodable {
-//    let info: Info не будем парсить
-    let results: [Episode]
+
+    let info: Info
+    let episodes: [Episode]
+    
+    enum CodingKeys: String, CodingKey {
+        case episodes = "results"
+        case info
+    }
 }
