@@ -80,8 +80,18 @@ private extension EpisodeListPresenter {
         ) { optionalData, optionalResponse, optionalError in
             let data = optionalData!
             let dataString = String(data: data, encoding: .utf8)
-            print(dataString)
+            
+            let jsonDecoder = JSONDecoder()
+            // когда предают тип, пишут Тип.self
+            do {
+                let episodeResponse = try jsonDecoder.decode(EpisodeResponse.self, from: data)
+                episodeResponse.results.forEach { episode in
+                    print(episode)
+                }
+            } catch let decodingError {
+                print(decodingError)
             }
+        }
         dataTask.resume()
     }
 }

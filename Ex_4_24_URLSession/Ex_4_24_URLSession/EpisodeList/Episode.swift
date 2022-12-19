@@ -14,7 +14,7 @@ import Foundation
 //    let prev : String?
 //}
 
-struct Episode {
+struct Episode: Decodable {
     let id : Int
     let name : String
 //    let air_date : String?
@@ -24,7 +24,8 @@ struct Episode {
 //    let created : String?
 }
 
-struct EpisodeResponse {
+// они все должны быть Decodable, чтобы можно было использовать в decode()
+struct EpisodeResponse: Decodable {
 //    let info: Info не будем парсить
-    let episodes: [Episode]
+    let results: [Episode]
 }
