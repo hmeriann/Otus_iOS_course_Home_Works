@@ -7,6 +7,8 @@
 
 import UIKit
 
+// конформит AnyObject, чтобы можно было понять, что это класс,
+// и поэтому объект этого клааса может быть weak var
 protocol IEpisodeListViewController: AnyObject {
     
 }
@@ -50,6 +52,7 @@ final class EpisodeListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
+        presenter.onViewDidLoad()
     }
 
     // MARK: Private
@@ -90,6 +93,7 @@ extension EpisodeListViewController: UITableViewDataSource {
 extension EpisodeListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         presenter.userDidSelectItem(at: indexPath)
     }
 }
