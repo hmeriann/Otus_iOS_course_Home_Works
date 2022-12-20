@@ -12,11 +12,16 @@ import UIKit
 final class EpisodeListAssembly {
     
     static func assemble() -> UIViewController {
+        
+        let servise = EpisodeService()
         // router осуществляет переходы на следующие экраны
         // (например, покажет детали выбранного из списка эпизода)
         let router = EpisodeListRouter()
         //
-        let presenter = EpisodeListPresenter(router: router)
+        let presenter = EpisodeListPresenter(
+            service: service,
+            router: router
+        )
         let viewController = EpisodeListViewController(presenter: presenter)
         
         presenter.view = viewController

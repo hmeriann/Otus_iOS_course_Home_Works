@@ -24,6 +24,7 @@ protocol IEpisodeListPresenter {
 final class EpisodeListPresenter {
 
     // MARK: Dependencies
+    private let service: IEpisodeService
     private let router: IEpisodeListRouter
     weak var view: IEpisodeListViewController?
     
@@ -41,7 +42,11 @@ final class EpisodeListPresenter {
     }()
     
     // MARK: Init
-    init(router: IEpisodeListRouter) {
+    init(
+        service: IEpisodeService,
+        router: IEpisodeListRouter
+    ) {
+        self.service = service
         self.router = router
     }
 }
@@ -75,27 +80,28 @@ private extension EpisodeListPresenter {
     
     func loadEpisodes() {
         
-        let urlSession = URLSession.shared
-        let episodesUrl = URL(string: "https://rickandmortyapi.com/api/episode")!
-        let dataTask = urlSession.dataTask(
-            with: episodesUrl
-        ) { optionalData, optionalResponse, optionalError in
-            let data = optionalData!
-            let dataString = String(data: data, encoding: .utf8)
-            
-            let jsonDecoder = JSONDecoder()
-            // когда предают тип, пишут Тип.self
-            do {
-                let episodeResponse = try jsonDecoder.decode(EpisodeResponse.self, from: data)
-//                episodeResponse.episodes.forEach { episode in
-//                    print(episode)
-//                }
-                print(episodeResponse.episodes[0])
-                print(episodeResponse.info)
-            } catch let decodingError {
-                print(decodingError)
-            }
-        }
-        dataTask.resume()
+        
+//        let urlSession = URLSession.shared
+//        let episodesUrl = URL(string: "https://rickandmortyapi.com/api/episode")!
+//        let dataTask = urlSession.dataTask(
+//            with: episodesUrl
+//        ) { optionalData, optionalResponse, optionalError in
+//            let data = optionalData!
+//            let dataString = String(data: data, encoding: .utf8)
+//
+//            let jsonDecoder = JSONDecoder()
+//            // когда предают тип, пишут Тип.self
+//            do {
+//                let episodeResponse = try jsonDecoder.decode(EpisodeResponse.self, from: data)
+////                episodeResponse.episodes.forEach { episode in
+////                    print(episode)
+////                }
+//                print(episodeResponse.episodes[0])
+//                print(episodeResponse.info)
+//            } catch let decodingError {
+//                print(decodingError)
+//            }
+//        }
+//        dataTask.resume()
     }
 }
