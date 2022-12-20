@@ -29,17 +29,7 @@ final class EpisodeListPresenter {
     weak var view: IEpisodeListViewController?
     
     // MARK: Data
-    private lazy var episodes: [Episode] = {
-
-        return []
-//        return (0...8).map {
-//            Episode(
-//                id: $0,
-//                name: "Episode \($0)",
-//                airDate: ""
-//            )
-//        }
-    }()
+    private var episodes: [Episode] = []
     
     // MARK: Init
     init(
@@ -79,29 +69,18 @@ extension EpisodeListPresenter: IEpisodeListPresenter {
 private extension EpisodeListPresenter {
     
     func loadEpisodes() {
-        
-        
-//        let urlSession = URLSession.shared
-//        let episodesUrl = URL(string: "https://rickandmortyapi.com/api/episode")!
-//        let dataTask = urlSession.dataTask(
-//            with: episodesUrl
-//        ) { optionalData, optionalResponse, optionalError in
-//            let data = optionalData!
-//            let dataString = String(data: data, encoding: .utf8)
-//
-//            let jsonDecoder = JSONDecoder()
-//            // когда предают тип, пишут Тип.self
-//            do {
-//                let episodeResponse = try jsonDecoder.decode(EpisodeResponse.self, from: data)
-////                episodeResponse.episodes.forEach { episode in
-////                    print(episode)
-////                }
-//                print(episodeResponse.episodes[0])
-//                print(episodeResponse.info)
-//            } catch let decodingError {
-//                print(decodingError)
-//            }
-//        }
-//        dataTask.resume()
+        service.loadEpisodes { [weak self] episodesResult in
+            
+            guard let self = self else { return }
+            switch episodesResult {
+            case .success(let episodes):
+                self.episodes = episodes
+                DispatchQueue.main.async {
+                    self.view?.updateUI()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }

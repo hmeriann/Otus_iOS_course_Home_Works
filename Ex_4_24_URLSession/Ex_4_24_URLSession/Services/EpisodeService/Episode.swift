@@ -36,6 +36,7 @@ struct Episode: Decodable {
 }
 
 // они все должны быть Decodable, чтобы можно было использовать в decode()
+/// Корневая структура для парсинга ответа с EpisodeRequest
 struct EpisodeResponse: Decodable {
 
     let info: Info

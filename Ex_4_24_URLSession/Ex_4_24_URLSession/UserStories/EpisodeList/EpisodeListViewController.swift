@@ -11,6 +11,7 @@ import UIKit
 // и поэтому объект этого клааса может быть weak var
 protocol IEpisodeListViewController: AnyObject {
     
+    func updateUI()
 }
 
 private extension String {
@@ -72,6 +73,10 @@ final class EpisodeListViewController: UIViewController {
 
 extension EpisodeListViewController: IEpisodeListViewController {
     
+    func updateUI() {
+        
+        tableView.reloadData()
+    }
 }
 
 extension EpisodeListViewController: UITableViewDataSource {

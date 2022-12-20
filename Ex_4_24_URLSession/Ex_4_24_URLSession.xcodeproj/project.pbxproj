@@ -13,11 +13,14 @@
 		A4C9146A294F15FE006C9117 /* EpisodeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C91469294F15FE006C9117 /* EpisodeListViewController.swift */; };
 		A4C9146C294F160F006C9117 /* EpisodeListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C9146B294F160F006C9117 /* EpisodeListAssembly.swift */; };
 		A4C9146E294F161C006C9117 /* EpisodeListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C9146D294F161C006C9117 /* EpisodeListPresenter.swift */; };
-		A4C91471294F1648006C9117 /* EpisodeListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C91470294F1648006C9117 /* EpisodeListInteractor.swift */; };
 		A4C91473294F1657006C9117 /* EpisodeListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C91472294F1657006C9117 /* EpisodeListRouter.swift */; };
 		A4C91476294F19E4006C9117 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C91475294F19E4006C9117 /* Episode.swift */; };
 		A4C91478294F1EC8006C9117 /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C91477294F1EC8006C9117 /* EpisodeTableViewCell.swift */; };
 		A4C9147B294F2089006C9117 /*  UIViewController+TransitionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C9147A294F2089006C9117 /*  UIViewController+TransitionHandler.swift */; };
+		A4C914802951A18C006C9117 /* EpisodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C9147F2951A18C006C9117 /* EpisodeService.swift */; };
+		A4C914832951A5CE006C9117 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C914822951A5CE006C9117 /* HTTPClient.swift */; };
+		A4C914862951ADD2006C9117 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C914852951ADD2006C9117 /* URLSessionProtocol.swift */; };
+		A4C914882951C393006C9117 /* EpisodeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C914872951C393006C9117 /* EpisodeRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,11 +32,14 @@
 		A4C91469294F15FE006C9117 /* EpisodeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListViewController.swift; sourceTree = "<group>"; };
 		A4C9146B294F160F006C9117 /* EpisodeListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListAssembly.swift; sourceTree = "<group>"; };
 		A4C9146D294F161C006C9117 /* EpisodeListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListPresenter.swift; sourceTree = "<group>"; };
-		A4C91470294F1648006C9117 /* EpisodeListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListInteractor.swift; sourceTree = "<group>"; };
 		A4C91472294F1657006C9117 /* EpisodeListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListRouter.swift; sourceTree = "<group>"; };
 		A4C91475294F19E4006C9117 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		A4C91477294F1EC8006C9117 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
 		A4C9147A294F2089006C9117 /*  UIViewController+TransitionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " UIViewController+TransitionHandler.swift"; sourceTree = "<group>"; };
+		A4C9147F2951A18C006C9117 /* EpisodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeService.swift; sourceTree = "<group>"; };
+		A4C914822951A5CE006C9117 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		A4C914852951ADD2006C9117 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
+		A4C914872951C393006C9117 /* EpisodeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +72,9 @@
 		A4C91451294F1387006C9117 /* Ex_4_24_URLSession */ = {
 			isa = PBXGroup;
 			children = (
+				A4C9147D2951A144006C9117 /* Services */,
+				A4C9147C2951A12F006C9117 /* UserStories */,
 				A4C91479294F207F006C9117 /* Common */,
-				A4C91468294F155B006C9117 /* EpisodeList */,
 				A4C91467294F140E006C9117 /* Assets */,
 				A4C91466294F1403006C9117 /* App */,
 			);
@@ -95,12 +102,10 @@
 		A4C91468294F155B006C9117 /* EpisodeList */ = {
 			isa = PBXGroup;
 			children = (
-				A4C91469294F15FE006C9117 /* EpisodeListViewController.swift */,
 				A4C9146B294F160F006C9117 /* EpisodeListAssembly.swift */,
 				A4C9146D294F161C006C9117 /* EpisodeListPresenter.swift */,
-				A4C91470294F1648006C9117 /* EpisodeListInteractor.swift */,
 				A4C91472294F1657006C9117 /* EpisodeListRouter.swift */,
-				A4C91475294F19E4006C9117 /* Episode.swift */,
+				A4C91469294F15FE006C9117 /* EpisodeListViewController.swift */,
 				A4C91477294F1EC8006C9117 /* EpisodeTableViewCell.swift */,
 			);
 			path = EpisodeList;
@@ -112,6 +117,42 @@
 				A4C9147A294F2089006C9117 /*  UIViewController+TransitionHandler.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		A4C9147C2951A12F006C9117 /* UserStories */ = {
+			isa = PBXGroup;
+			children = (
+				A4C91468294F155B006C9117 /* EpisodeList */,
+			);
+			path = UserStories;
+			sourceTree = "<group>";
+		};
+		A4C9147D2951A144006C9117 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A4C914842951A5E4006C9117 /* HTTPClient */,
+				A4C9147E2951A14B006C9117 /* EpisodeService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A4C9147E2951A14B006C9117 /* EpisodeService */ = {
+			isa = PBXGroup;
+			children = (
+				A4C91475294F19E4006C9117 /* Episode.swift */,
+				A4C9147F2951A18C006C9117 /* EpisodeService.swift */,
+				A4C914872951C393006C9117 /* EpisodeRequest.swift */,
+			);
+			path = EpisodeService;
+			sourceTree = "<group>";
+		};
+		A4C914842951A5E4006C9117 /* HTTPClient */ = {
+			isa = PBXGroup;
+			children = (
+				A4C914822951A5CE006C9117 /* HTTPClient.swift */,
+				A4C914852951ADD2006C9117 /* URLSessionProtocol.swift */,
+			);
+			path = HTTPClient;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,14 +226,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4C91473294F1657006C9117 /* EpisodeListRouter.swift in Sources */,
+				A4C914882951C393006C9117 /* EpisodeRequest.swift in Sources */,
 				A4C91478294F1EC8006C9117 /* EpisodeTableViewCell.swift in Sources */,
 				A4C9146A294F15FE006C9117 /* EpisodeListViewController.swift in Sources */,
+				A4C914802951A18C006C9117 /* EpisodeService.swift in Sources */,
 				A4C91476294F19E4006C9117 /* Episode.swift in Sources */,
+				A4C914862951ADD2006C9117 /* URLSessionProtocol.swift in Sources */,
 				A4C9147B294F2089006C9117 /*  UIViewController+TransitionHandler.swift in Sources */,
+				A4C914832951A5CE006C9117 /* HTTPClient.swift in Sources */,
 				A4C91453294F1387006C9117 /* AppDelegate.swift in Sources */,
 				A4C9146E294F161C006C9117 /* EpisodeListPresenter.swift in Sources */,
 				A4C9146C294F160F006C9117 /* EpisodeListAssembly.swift in Sources */,
-				A4C91471294F1648006C9117 /* EpisodeListInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

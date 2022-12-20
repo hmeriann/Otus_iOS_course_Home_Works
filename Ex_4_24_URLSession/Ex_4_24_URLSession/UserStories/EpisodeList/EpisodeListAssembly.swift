@@ -13,11 +13,12 @@ final class EpisodeListAssembly {
     
     static func assemble() -> UIViewController {
         
-        let servise = EpisodeService()
+        let httpClient = HTTPClient()
+        let service = EpisodeService(httpClient: httpClient)
+        
         // router осуществляет переходы на следующие экраны
         // (например, покажет детали выбранного из списка эпизода)
         let router = EpisodeListRouter()
-        //
         let presenter = EpisodeListPresenter(
             service: service,
             router: router
