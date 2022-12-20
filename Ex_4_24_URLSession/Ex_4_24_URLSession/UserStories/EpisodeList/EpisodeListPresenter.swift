@@ -69,9 +69,12 @@ extension EpisodeListPresenter: IEpisodeListPresenter {
 private extension EpisodeListPresenter {
     
     func loadEpisodes() {
+        
+        view?.showActivityIndicator()
         service.loadEpisodes { [weak self] episodesResult in
             
             guard let self = self else { return }
+            self.view?.hideActivityIndicator()
             switch episodesResult {
             case .success(let episodes):
                 self.episodes = episodes
@@ -79,7 +82,9 @@ private extension EpisodeListPresenter {
                     self.view?.updateUI()
                 }
             case .failure(let error):
-                print(error)
+                DispatchQueue.main.async {
+                    self.view?.showError(message: error.localizedDescription)
+                }
             }
         }
     }

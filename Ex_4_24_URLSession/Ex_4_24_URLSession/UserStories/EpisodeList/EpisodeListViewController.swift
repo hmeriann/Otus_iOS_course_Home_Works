@@ -12,6 +12,9 @@ import UIKit
 protocol IEpisodeListViewController: AnyObject {
     
     func updateUI()
+    func showError(message: String)
+    func showActivityIndicator()
+    func hideActivityIndicator()
 }
 
 private extension String {
@@ -76,6 +79,26 @@ extension EpisodeListViewController: IEpisodeListViewController {
     func updateUI() {
         
         tableView.reloadData()
+    }
+    
+    func showError(message: String) {
+        
+        let alert = UIAlertController(
+            title: "Error",
+            message: message,
+            preferredStyle: .alert
+        )
+        let action = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func showActivityIndicator() {
+        print(#function)
+    }
+    
+    func hideActivityIndicator() {
+        print(#function)
     }
 }
 

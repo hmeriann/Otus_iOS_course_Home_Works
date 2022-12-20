@@ -10,8 +10,9 @@ import Foundation
 /// Создает конкретный URLRequest с эндпойнта
 struct EpisodeRequest {
     
+    // to check an alert breake the URL
     static let episodesUrlString = "https://rickandmortyapi.com/api/episode"
-    
+
     static func makeURLRequest() -> URLRequest {
         
         guard let episodesUrl = URL(string: EpisodeRequest.episodesUrlString) else {
