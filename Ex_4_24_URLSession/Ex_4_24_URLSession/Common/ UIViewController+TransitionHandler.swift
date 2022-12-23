@@ -12,7 +12,7 @@ protocol ITransitionHandler: AnyObject {
         animated flag: Bool,
       completion: (() -> Void)?)
     
-    func pushViewController(_: UIViewController, animated: Bool)
+    func pushViewController(_ viewController: UIViewController, animated: Bool)
 
 }
 
