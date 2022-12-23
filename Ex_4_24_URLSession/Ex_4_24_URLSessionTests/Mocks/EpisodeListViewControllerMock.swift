@@ -12,10 +12,12 @@ class EpisodeListViewControllerMock: IEpisodeListViewController {
 
     var invokedUpdateUI = false
     var invokedUpdateUICount = 0
-
+    var stubbedUpdateUICompletion: (() -> Void?)?
+    
     func updateUI() {
         invokedUpdateUI = true
         invokedUpdateUICount += 1
+        stubbedUpdateUICompletion?()
     }
 
     var invokedShowError = false

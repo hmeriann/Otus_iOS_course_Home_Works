@@ -19,6 +19,7 @@ class EpisodeServiceMock: IEpisodeService {
         invokedLoadEpisodesCount += 1
         if let result = stubbedLoadEpisodesCompletionResult {
             completion(result.0)
+            print("COMPLETION")
         }
     }
 }
