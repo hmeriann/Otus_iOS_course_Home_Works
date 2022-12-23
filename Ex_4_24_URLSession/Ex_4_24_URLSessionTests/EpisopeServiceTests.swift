@@ -19,7 +19,8 @@ final class EpisopeServiceTests: XCTestCase {
     }
 
     override func tearDownWithError() throws {
-       
+        httpClientMock = nil
+        episodeService = nil
     }
     
     // Checks the func loadEpisodes(): при вызове метода он передаст апрос в HTTP клиеннт

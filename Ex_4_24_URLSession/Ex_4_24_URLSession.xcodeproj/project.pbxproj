@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A463B033295598AD00991891 /* EpisodeListPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A463B032295598AD00991891 /* EpisodeListPresenterTest.swift */; };
+		A463B0352955998100991891 /* EpisodeServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A463B0342955998100991891 /* EpisodeServiceMock.swift */; };
+		A463B03729559A0400991891 /* EpisodeListRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A463B03629559A0400991891 /* EpisodeListRouterMock.swift */; };
+		A463B03929559D3100991891 /* EpisodeListViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A463B03829559D3100991891 /* EpisodeListViewControllerMock.swift */; };
 		A4A216B229558F7C009452A5 /* Ex_4_24_URLSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A216B129558F7C009452A5 /* Ex_4_24_URLSessionTests.swift */; };
 		A4A216B929559053009452A5 /* EpisopeServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A216B829559053009452A5 /* EpisopeServiceTests.swift */; };
 		A4A216BC295594A1009452A5 /* HTTPClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A216BB295594A1009452A5 /* HTTPClientMock.swift */; };
@@ -37,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A463B032295598AD00991891 /* EpisodeListPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListPresenterTest.swift; sourceTree = "<group>"; };
+		A463B0342955998100991891 /* EpisodeServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeServiceMock.swift; sourceTree = "<group>"; };
+		A463B03629559A0400991891 /* EpisodeListRouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListRouterMock.swift; sourceTree = "<group>"; };
+		A463B03829559D3100991891 /* EpisodeListViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListViewControllerMock.swift; sourceTree = "<group>"; };
 		A4A216AF29558F7C009452A5 /* Ex_4_24_URLSessionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Ex_4_24_URLSessionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4A216B129558F7C009452A5 /* Ex_4_24_URLSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_4_24_URLSessionTests.swift; sourceTree = "<group>"; };
 		A4A216B829559053009452A5 /* EpisopeServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisopeServiceTests.swift; sourceTree = "<group>"; };
@@ -83,6 +91,7 @@
 				A4A216BA29559489009452A5 /* Mocks */,
 				A4A216B129558F7C009452A5 /* Ex_4_24_URLSessionTests.swift */,
 				A4A216B829559053009452A5 /* EpisopeServiceTests.swift */,
+				A463B032295598AD00991891 /* EpisodeListPresenterTest.swift */,
 			);
 			path = Ex_4_24_URLSessionTests;
 			sourceTree = "<group>";
@@ -91,6 +100,9 @@
 			isa = PBXGroup;
 			children = (
 				A4A216BB295594A1009452A5 /* HTTPClientMock.swift */,
+				A463B0342955998100991891 /* EpisodeServiceMock.swift */,
+				A463B03629559A0400991891 /* EpisodeListRouterMock.swift */,
+				A463B03829559D3100991891 /* EpisodeListViewControllerMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -299,8 +311,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A463B03729559A0400991891 /* EpisodeListRouterMock.swift in Sources */,
 				A4A216B229558F7C009452A5 /* Ex_4_24_URLSessionTests.swift in Sources */,
+				A463B03929559D3100991891 /* EpisodeListViewControllerMock.swift in Sources */,
 				A4A216B929559053009452A5 /* EpisopeServiceTests.swift in Sources */,
+				A463B033295598AD00991891 /* EpisodeListPresenterTest.swift in Sources */,
+				A463B0352955998100991891 /* EpisodeServiceMock.swift in Sources */,
 				A4A216BC295594A1009452A5 /* HTTPClientMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
